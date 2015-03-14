@@ -2,6 +2,7 @@ require 'capybara/rspec'
 require './app/server'
 require './app/models/customer'
 require './app/models/order'
+require './app/models/receipt'
 
 RSpec.configure do |config|
 
