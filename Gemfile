@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'sinatra'
 gem 'json'
 gem 'hashie'
-gem 'pp'
+gem 'ppm'
 
 group :development, :test do
   gem 'capybara'

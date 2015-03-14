@@ -2,7 +2,7 @@ class Receipt
 
   attr_reader :order
 
-  def initialize(order)
+  def initialize(order, total=0)
     @order = order 
   end 
 

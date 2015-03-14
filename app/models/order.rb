@@ -8,7 +8,8 @@ class Order
   end 
 
   def add(item, number=1)
-    @items << item 
+     item << number
+     @items << item  
   end 
 
 end 
