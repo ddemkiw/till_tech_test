@@ -14,10 +14,10 @@ feature 'ordering' do
     menu = Menu.new
     customer = Customer.new("sandi")
     order = Order.new(customer)
-    item = Item.new({:name=>menu.find("Tiramisu")[0], :price=>menu.find("Tiramisu")[1]})
-    order.add(menu.find("Tiramisu"), 3)
+    item = Item.new({:name=>menu.find("Tiramisu")[0], :price=>menu.find("Tiramisu")[1], :number=>3})
+    order.add(item)
     receipt = Receipt.new(order)
-    expect(receipt.items[0]).to include("Tiramisu")
+    expect(receipt.items[0].name).to include("Tiramisu")
   end 
 
 

@@ -4,6 +4,9 @@ require './app/models/customer'
 require './app/models/order'
 require './app/models/receipt'
 require './app/models/menu'
+require './app/models/calculator'
+require './app/models/item'
+
 
 
 RSpec.configure do |config|

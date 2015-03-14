@@ -7,9 +7,9 @@ class Order
     @customer = customer
   end 
 
-  def add(item, number=1)
-     item << number
-     @items << item  
+  def add(item)
+    @items << item  
   end 
+
 
 end 

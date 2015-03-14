@@ -1,9 +1,10 @@
 class Receipt
 
-  attr_reader :order
+  attr_reader :order, :total
 
   def initialize(order, total=0)
-    @order = order 
+    @order = order
+    @total = total 
   end 
 
   def items
