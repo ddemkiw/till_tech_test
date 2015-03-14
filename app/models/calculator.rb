@@ -1,23 +1,21 @@
 class Calculator 
 
-  attr_reader :order, :total_for_items
+  attr_reader :order, :total, :total_before_tax
 
   def initialize(order)
     @order = order
-    @prices = []
-    self.prices
+    @prices_per_item = []
+    @total_before_tax = self.total_before_tax
   end 
 
   def total
-    self.total_before_tax
+    @total_before_tax
   end
 
-  def prices 
-    @order.each{|key, value| @prices << (key.price * value)}
+  def total_before_tax 
+    @order.each{|key, value| @prices_per_item << (key.price * value)}
+    @prices_per_item.inject(:+)
   end 
 
-  def total_before_tax
-    @prices.inject(:+)
-  end 
 
 end 

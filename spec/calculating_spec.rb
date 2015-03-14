@@ -25,6 +25,7 @@ feature 'calculating' do
       item2 = Item.new({:name=>menu.find("Americano")[0], :price=>menu.find("Americano")[1]})
       order.add(item1, 3)
       order.add(item2, 3)
+      p order.line_items
       calculator = Calculator.new(order.line_items)
       receipt = Receipt.new(order, calculator.total)
 
