@@ -6,7 +6,7 @@ feature 'ordering' do
     customer = Customer.new("sandi")
     order = Order.new(customer)
     order.add(:coffee)
-    receipt = Receipt.new(order)
+    receipt = Receipt.new(order, 0)
     expect(receipt.items).to include(:coffee)
   end 
 
@@ -14,9 +14,9 @@ feature 'ordering' do
     menu = Menu.new
     customer = Customer.new("sandi")
     order = Order.new(customer)
-    order.add("Tiramisu", 3)
-    receipt = Receipt.new(order)
-    expect(receipt.items).to include("Tiramisu")
+    order.add(menu.find("Tiramisu"), 3)
+    receipt = Receipt.new(order, 0)
+    expect(receipt.items[0]).to include("Tiramisu")
   end 
 
 end 
