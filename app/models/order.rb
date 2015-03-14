@@ -1,9 +1,12 @@
 class Order
 
-  attr_accessor :customer
+  def initialize(customer)
+    @order = []
+    @customer = customer
+  end 
 
-def intialize(customer)
-  @customer = customer
-end 
+  def add(item)
+    @order << item 
+  end 
 
 end 
