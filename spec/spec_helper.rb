@@ -3,6 +3,8 @@ require './app/server'
 require './app/models/customer'
 require './app/models/order'
 require './app/models/receipt'
+require './app/models/menu'
+
 
 RSpec.configure do |config|
 
