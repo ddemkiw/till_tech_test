@@ -7,9 +7,15 @@ class Order
     @customer = customer
   end 
 
-  def add(item)
-    @items << item  
+  def add(item, number=1)
+    number.times do 
+      @items << item
+    end  
   end 
+
+  def line_items
+    items.inject(Hash.new(0)) { |total, item| total[item] += 1 ;total}
+  end
 
 
 end 

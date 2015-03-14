@@ -9,14 +9,14 @@ class Calculator
   end 
 
   def total
-    self.total_for_items
+    self.total_before_tax
   end
 
   def prices 
-    @order.items.each{|item| @prices << item.total_price}
+    @order.each{|key, value| @prices << (key.price * value)}
   end 
 
-  def total_for_items
+  def total_before_tax
     @prices.inject(:+)
   end 
 
