@@ -1,18 +1,18 @@
 class Calculator 
 
-  attr_reader :order, :total, :total_before_tax
+  attr_reader :order, :total, :total_before_tax, :tax_added
 
 
   def initialize(order)
     @order = order
     @prices_per_item = []
     @total_before_tax = self.total_without_tax
-    @tax_rate = 0.09
-    @tax = self.tax
+    @tax_rate = 0.0864
+    @tax_added = self.tax
   end 
 
   def total
-    (@total_before_tax + @tax).round(2)
+    (@total_before_tax + @tax_added).round(2)
   end
 
   def total_without_tax 
