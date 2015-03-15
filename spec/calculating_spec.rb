@@ -17,7 +17,6 @@ feature 'calculating' do
       order.add(item1, 3)
       
       expect(receipt_without_tax.total).to eq(34.2)
-
     end 
 
     scenario 'can calculate the bill for many items' do 
@@ -25,7 +24,6 @@ feature 'calculating' do
       order.add(item2, 3)
 
       expect(receipt_without_tax.total).to eq(45.45)
-
     end 
   end
 
@@ -35,7 +33,6 @@ feature 'calculating' do
       order.add(item1, 3)
 
       expect(receipt_with_tax.total).to eq(37.15)
-
     end 
 
     scenario 'can calculate the bill for many items' do 
@@ -43,7 +40,6 @@ feature 'calculating' do
       order.add(item2, 3)
 
       expect(receipt_with_tax.total).to eq(49.38)
-
     end 
   end
 
