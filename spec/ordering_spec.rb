@@ -1,22 +1,22 @@
 require 'spec_helper'
 
 feature 'ordering' do 
+
+  let(:menu) {Menu.new}
+  let(:customer) {Customer.new('Sandi')}
+  let(:order) {Order.new(customer)}
+  let(:item1) {Item.new({:name=>menu.find("Tiramisu")[0], :price=>menu.find("Tiramisu")[1]})}
+  let(:receipt) {Receipt.new(order)}
   
   scenario 'customer orders' do 
-    customer = Customer.new("sandi")
-    order = Order.new(customer)
     order.add([:coffee])
-    receipt = Receipt.new(order)
+
     expect(receipt.items[0]).to include(:coffee)
   end 
 
   scenario 'customer orders item from menu' do 
-    menu = Menu.new
-    customer = Customer.new("sandi")
-    order = Order.new(customer)
-    item = Item.new({:name=>menu.find("Tiramisu")[0], :price=>menu.find("Tiramisu")[1]})
-    order.add(item, 3)
-    receipt = Receipt.new(order)
+    order.add(item1, 3)
+    
     expect(receipt.items[0].name).to include("Tiramisu")
   end 
 
