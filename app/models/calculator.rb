@@ -12,7 +12,7 @@ class Calculator
   end 
 
   def total
-    @total_before_tax + @tax
+    (@total_before_tax + @tax).round(2)
   end
 
   def total_without_tax 
