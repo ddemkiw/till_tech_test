@@ -1,6 +1,5 @@
 require 'capybara/rspec'
 require 'timecop'
-require './app/server'
 require './app/models/order'
 require './app/models/receipt'
 require './app/models/menu'
