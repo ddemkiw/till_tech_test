@@ -21,7 +21,7 @@ class Calculator
   end 
 
   def tax
-    @total_before_tax * @tax_rate
+    (@total_before_tax * @tax_rate).round(2)
   end 
 
 

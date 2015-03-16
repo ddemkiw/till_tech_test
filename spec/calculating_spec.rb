@@ -27,7 +27,7 @@ feature 'calculating' do
     end 
   end
 
-    feature 'with tax' do 
+  feature 'with tax' do 
   
     scenario 'can calculate the bill for one item' do 
       order.add(item1, 3)

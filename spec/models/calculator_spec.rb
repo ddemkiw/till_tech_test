@@ -1,14 +1,18 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# describe 'Calculator' do 
+describe 'Calculator' do 
   
-#   let(:item) {double :item, :price=> 11.4, name: "tiramisu", :number=> 3, :total_price=>34.2}
-#   let(:order) {double :order, :items=> [:item]}
+  let(:item) {double :item, :price=> 11.4, name: "tiramisu"}
+  let(:order) {double :order, :items=> {item=> 3}}
 
-#   let(:calulator) { Calculator.new(:order) }
+  let(:calulator) { Calculator.new(order.items) }
 
-#   it 'adds up the bill' do
-#     allow(:order).to receive(:items)
-   
-#   end 
-# end
+  it 'adds up the bill with tax' do
+    expect(calulator.total).to eq(37.15)
+  end 
+
+  it 'calculates the tax for the bill' do
+    expect(calulator.tax).to eq(2.95)
+  end
+
+end

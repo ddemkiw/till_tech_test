@@ -16,10 +16,8 @@ feature 'ordering' do
 
   scenario 'customer orders item from menu' do 
     order.add(item1, 3)
-    
+
     expect(receipt.items[0].name).to include("Tiramisu")
   end 
-
-
 
 end 
