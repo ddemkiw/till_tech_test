@@ -6,7 +6,7 @@ feature 'ordering' do
   let(:customer) {Customer.new('Sandi')}
   let(:order) {Order.new(customer)}
   let(:item1) {Item.new({:name=>menu.find("Tiramisu")[0], :price=>menu.find("Tiramisu")[1]})}
-  let(:receipt) {Receipt.new(order)}
+  let(:receipt) {Receipt.new({:order=>order})}
   
   scenario 'customer orders' do 
     order.add([:coffee])

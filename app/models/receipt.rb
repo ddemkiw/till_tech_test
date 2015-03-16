@@ -2,9 +2,9 @@ class Receipt
 
   attr_reader :order, :total, :created_at
 
-  def initialize(order, totals=0)
-    @order = order
-    @total = totals 
+  def initialize(opts = {})
+    @order = opts[:order]
+    @total = opts[:totals] 
     @created_at = Time.now
   end 
 
