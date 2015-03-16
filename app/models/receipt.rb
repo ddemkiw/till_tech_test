@@ -9,6 +9,6 @@ class Receipt
   end 
 
   def items
-    @order.items 
+    @order.each{|order| order.items} 
   end 
 end 
