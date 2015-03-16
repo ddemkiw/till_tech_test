@@ -16,7 +16,7 @@ class Order
   end 
 
   def line_items
-    items.inject(Hash.new(0)) { |total, item| total[item] += 1 ;total}
+    @items.inject(Hash.new(0)) { |total, item| total[item] += 1 ;total}
   end
 
 
