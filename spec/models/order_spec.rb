@@ -4,9 +4,8 @@ describe 'Order' do
   
   let(:item1) {double :item, :price=> 11.4, name: "tiramisu"}
   let(:item2) {double :item, :price=> 4, name: "americano"}
-  let(:customer) {double :customer, name: "Sandi"}
 
-  let(:order) { Order.new(customer) }
+  let(:order) { Order.new({customer_name: 'Sandi'}) }
 
   it 'can add one item' do
     order.add(item1)

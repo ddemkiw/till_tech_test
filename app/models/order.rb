@@ -2,9 +2,11 @@ class Order
 
   attr_accessor :items
 
-  def initialize(customer)
+  Customer = Struct.new(:name)
+
+  def initialize(opts = {})
     @items = []
-    @customer = customer
+    @customer = Customer.new(opts[:customer_name])
   end 
 
   def add(item, number=1)
