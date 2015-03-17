@@ -20,7 +20,7 @@ class Calculator
     @order.items.each do |k, v|
        @prices_per_item << (@menu.find(k) * v)
     end
-    @prices_per_item.inject(:+)
+    @prices_per_item.inject(:+).round(2)
   end 
 
   def tax
