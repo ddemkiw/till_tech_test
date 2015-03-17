@@ -1,10 +1,8 @@
 require 'spec_helper'
 
 describe 'Receipt' do 
-  
-  let(:item1) {double :item, :price=> 11.4, name: "tiramisu"}
-  let(:item2) {double :item, :price=> 4, name: "americano"}
-  let(:order) {double :order, customer: "Sandi", :items => [item1, item2]}
+ 
+  let(:order) {double :order, customer: "Sandi", :items => ["americano"=>3]}
   let(:calculator) {double :calculator, :total=> 16.72, :tax=>1.32, :total_before_tax=>15.4}
 
   let(:receipt) {Receipt.new({:orders=>[order], :totals=>calculator})}

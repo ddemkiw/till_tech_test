@@ -1,31 +1,29 @@
 require 'spec_helper'
 
 describe 'Order' do 
-  
-  let(:item1) {double :item, :price=> 11.4, name: "tiramisu"}
-  let(:item2) {double :item, :price=> 4, name: "americano"}
 
   let(:order) { Order.new({customer_name: 'Sandi'}) }
 
   it 'can add one item' do
-    order.add(item1)
+    order.add("tiramisu", 1)
     
-    expect(order.items).to eq([item1])
+    expect(order.items).to eq({"tiramisu"=>1})
   end 
 
   it 'can add multiple items' do
-    order.add(item1, 4)
+    order.add("tiramisu", 4)
 
-    expect(order.items).to eq([item1, item1, item1, item1])
+    expect(order.items).to eq({"tiramisu"=>4})
   end 
 
-  it 'can produce line items' do
-    order.add(item1, 4)
-    order.add(item2, 2)
 
-    expect(order.line_items).to eq({item1=>4, item2=>2})
-  end 
+  it 'can keep track of number of items multiple items' do 
+    order.add(:coffee, 3)
+    order.add(:coffee, 1)
+    order.add(:milk, 1)
 
+    expect(order.items).to eq({:coffee=>4, :milk=>1})
+  end
  
 
 end

@@ -3,8 +3,9 @@ class Calculator
   attr_reader :order, :total, :total_before_tax, :tax_added
 
 
-  def initialize(order)
-    @order = order
+  def initialize(opts = {})
+    @order = opts[:order]
+    @menu = opts[:menu]
     @prices_per_item = []
     @total_before_tax = self.total_without_tax
     @tax_rate = 0.0864
