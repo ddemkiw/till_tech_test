@@ -27,7 +27,7 @@ feature 'ordering' do
     order2.add(item1)
 
     expect(receipt_with_two_orders.items).to be_an Array
-    expect(receipt_with_two_orders.display_items).to include(order)
+    expect(receipt_with_two_orders.items).to include(order)
   end 
 
 end 

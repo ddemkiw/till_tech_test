@@ -12,8 +12,6 @@ class Receipt
     @order.each{|order| order.items} 
   end 
 
-  def display_items
-    @order.each{|order| order.line_items}
-  end 
+
 
 end 
