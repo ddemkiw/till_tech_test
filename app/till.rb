@@ -18,9 +18,10 @@ class Till < Sinatra::Base
     @order.add(@item1, 2)
     @order.add(@item2)
     @order.add(@item3)
-    @calulator = Calculator.new(@order.line_items)
-    @receipt = Receipt.new({:orders=>@order, :total=>@calculator})
-    json(@receipt, :encoder => :to_json, :content_type => :js)
+    @calculator = Calculator.new(@order)
+    @tax = @calculator.tax_added
+    @total_without_tax = @calculator.total_before_tax
+    erb :index 
   end
 
   # start the server if ruby file executed directly
