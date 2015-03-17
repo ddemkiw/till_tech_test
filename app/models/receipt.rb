@@ -8,10 +8,4 @@ class Receipt
     @created_at = Time.now
   end 
 
-  def items
-    @order.each{|order| order.items} 
-  end 
-
-
-
 end 
