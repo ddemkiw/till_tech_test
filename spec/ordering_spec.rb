@@ -5,7 +5,7 @@ feature 'ordering' do
   let(:menu) {Menu.new}
   let(:order) {Order.new({customer_name: 'Sandi'})}
   let(:order2) {Order.new({customer_name: 'Jim'})}
-  let(:item1) {Item.new({:name=>menu.find("Tiramisu")[0], :price=>menu.find("Tiramisu")[1]})}
+  let(:item1) {Item.new({:name=>"Tiramisu", :price=>menu.find("Tiramisu")})}
   let(:receipt) {Receipt.new({:orders=>[order]})}
   let(:receipt_with_two_orders) {Receipt.new({:orders=>[order, order2]})}
   

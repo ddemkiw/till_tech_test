@@ -8,8 +8,8 @@ describe 'Menu' do
     expect(menu.items).to include('Americano')
   end 
 
-  it 'can find an item based on item name' do
-    expect(menu.find('Americano')).to include('Americano')
+  it 'can find an item price based on item name' do
+    expect(menu.find('Americano')).to eq(3.75)
   end 
 
 end

@@ -9,7 +9,7 @@ class Menu
   end 
 
   def find(item_name)
-     @items.assoc(item_name)
+     @items[item_name]
   end 
 
 end
