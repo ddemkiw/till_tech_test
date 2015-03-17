@@ -16,7 +16,7 @@ class Calculator
   end
 
   def total_without_tax 
-    @order.each{|key, value| @prices_per_item << (key.price * value)}
+    @order.line_items.each{|key, value| @prices_per_item << (key.price * value)}
     @prices_per_item.inject(:+)
   end 
 

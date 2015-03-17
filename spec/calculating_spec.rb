@@ -5,7 +5,7 @@ feature 'calculating' do
   let(:order) {Order.new({customer_name: 'Sandi'})}
   let(:item1) {Item.new({:name=>menu.find("Tiramisu")[0], :price=>menu.find("Tiramisu")[1]})}
   let(:item2) {Item.new({:name=>menu.find("Americano")[0], :price=>menu.find("Americano")[1]})}
-  let(:calculator) {Calculator.new(order.line_items)}
+  let(:calculator) {Calculator.new(order)}
   let(:receipt_without_tax) {Receipt.new({:orders=>[order], :totals=>calculator.total_before_tax})}
   let(:receipt_with_tax) {Receipt.new({:orders=>[order], :totals=>calculator.total})}
 

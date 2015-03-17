@@ -3,9 +3,9 @@ require 'spec_helper'
 describe 'Calculator' do 
   
   let(:item) {double :item, :price=> 11.4, name: "tiramisu"}
-  let(:order) {double :order, :items=> {item=> 3}}
+  let(:order) {double :order, :line_items=> {item=> 3}}
 
-  let(:calulator) { Calculator.new(order.items) }
+  let(:calulator) { Calculator.new(order) }
 
   it 'adds up the bill with tax' do
     expect(calulator.total).to eq(37.15)
