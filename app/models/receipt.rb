@@ -4,7 +4,8 @@ class Receipt
 
   def initialize(opts = {})
     @order = opts[:orders]
-    @total = opts[:totals] 
+    @calculator = opts[:calculator] 
+    @menu = opts[:menu]
     @created_at = Time.now
   end 
 
