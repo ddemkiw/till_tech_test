@@ -10,7 +10,8 @@ require './app/helpers/helper'
 
 class Till < Sinatra::Base
   
-  TILL = Till.new
+
+
   get '/' do
     janes_order
     erb :index 
