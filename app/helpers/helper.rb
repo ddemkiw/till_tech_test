@@ -4,5 +4,7 @@ def janes_order
     @order.add("Cafe Latte", 2)
     @order.add("Blueberry Muffin")
     @order.add("Choc Mudcake")
+    
     @calculator = Calculator.new({:order=>@order, :menu=>@menu})
+    @receipt = Receipt.new({:order=>@order, :calculator=>@calculator}) 
 end 

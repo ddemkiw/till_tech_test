@@ -4,8 +4,33 @@
   <title></title>
 </head>
   <body>
-  <%=@menu.info["shopName"]%><br>
-  <%=@menu.info["address"]%><br> 
-  <%%>
+  <div style="float: left; margin-left: 30px">
+  <img class="front-page" src="/images/coffee.png" style="width:228px;height:228px">
+    
+    <div class="items">
+      <br>
+      <%=@receipt.created_at%><br>
+      <%=@menu.info["shopName"]%><br>
+      <br>
+      <br>
+      <%=@menu.info["address"]%><br> 
+      <%="Phone: #{@menu.info["phone"]}"%><br>
+      <br>
+      <%= "#{@order.customer.name.to_s}"%><br>
+      <%@order.items.each do |k,v|%>
+        <%@price = @menu.find(k).to_s%>
+        <%="#{k} #{v.to_s} x #{@price}"%><br>
+      <%end%>
+    </div>
+    <br>
+    <br>
+    <%="Tax: #{@calculator.tax.to_s}"%><br>
+    <%="Total: #{@calculator.total.to_s}"%>
+
+    <div>
+
+    </div>
+  </div>
+  
   </body>
 </html>

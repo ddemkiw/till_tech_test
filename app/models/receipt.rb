@@ -6,7 +6,7 @@ class Receipt
     @order = opts[:orders]
     @calculator = opts[:calculator] 
     @menu = opts[:menu]
-    @created_at = Time.now
+    @created_at = Time.now.strftime("%F %R")
   end 
 
   def total 

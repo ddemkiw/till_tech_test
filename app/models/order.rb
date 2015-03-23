@@ -1,6 +1,6 @@
 class Order
 
-  attr_accessor :items
+  attr_accessor :items, :customer
 
   Customer = Struct.new(:name)
 

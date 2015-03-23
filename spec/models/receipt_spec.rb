@@ -7,12 +7,6 @@ describe 'Receipt' do
 
   let(:receipt) {Receipt.new({:orders=>[order], :calculator=>calculator})}
 
-  #  before(:each) do 
-  #   allow(order).to receive(:items).and_return({"americano"=>3})
-  # end
-
-
-
   it 'is created at a certain time' do
     new_time = Time.local(2015, 9, 1, 12, 0, 0)
     Timecop.freeze(new_time)

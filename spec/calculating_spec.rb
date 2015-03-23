@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'calculating' do
+feature 'calculating receipt for order' do
   let(:menu) {Menu.new}
   let(:order) {Order.new({customer_name: 'Sandi'})}
   let(:calculator) {Calculator.new({:order=>order, :menu=>menu})}
@@ -9,8 +9,7 @@ feature 'calculating' do
 
 
 
-  feature 'with tax' do 
-  
+  feature 'receipt' do 
     scenario 'can calculate the bill for one item' do 
       order.add("Choc Mousse", 3)
 
