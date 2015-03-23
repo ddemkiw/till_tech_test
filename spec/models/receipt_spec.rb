@@ -11,7 +11,7 @@ describe 'Receipt' do
     new_time = Time.local(2015, 9, 1, 12, 0, 0)
     Timecop.freeze(new_time)
 
-    expect(receipt.created_at).to eq(new_time)
+    expect(receipt.created_at).to eq(new_time.strftime("%F %R"))
   end 
 
   it 'contains an order' do

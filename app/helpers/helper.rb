@@ -6,5 +6,6 @@ def janes_order
     @order.add("Choc Mudcake")
     
     @calculator = Calculator.new({:order=>@order, :menu=>@menu})
-    @receipt = Receipt.new({:order=>@order, :calculator=>@calculator}) 
+    @janes_receipt = Receipt.new({:order=>@order, :calculator=>@calculator}) 
+
 end 

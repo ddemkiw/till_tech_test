@@ -6,14 +6,19 @@ require './app/models/order'
 require './app/models/receipt'
 require './app/models/menu'
 require './app/models/calculator'
+require './app/models/tiller'
 require './app/helpers/helper'
 
-class Till < Sinatra::Base
-  
 
+
+class Till < Sinatra::Base
+
+  TILLER = Tiller.new
 
   get '/' do
     janes_order
+    TILLER.add_receipt(@janes_receipt)
+    
     erb :index 
   end
 
