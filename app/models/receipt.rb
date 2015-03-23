@@ -1,11 +1,10 @@
 class Receipt
 
-  attr_reader :order, :total, :created_at
+  attr_reader :order, :total, :created_at, :calculator
 
   def initialize(opts = {})
-    @order = opts[:orders]
+    @order = opts[:order]
     @calculator = opts[:calculator] 
-    @menu = opts[:menu]
     @created_at = Time.now.strftime("%F %R")
   end 
 
