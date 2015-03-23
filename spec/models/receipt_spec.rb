@@ -5,7 +5,7 @@ describe 'Receipt' do
   let(:order) {double :order, customer: "Sandi", :items => {"americano"=>3}}
   let(:calculator) {double :calculator, :total=> 16.72}
 
-  let(:receipt) {Receipt.new({:orders=>[order], :calculator=>calculator})}
+  let(:receipt) {Receipt.new({:order=>[order], :calculator=>calculator})}
 
   it 'is created at a certain time' do
     new_time = Time.local(2015, 9, 1, 12, 0, 0)
