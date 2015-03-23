@@ -11,5 +11,9 @@ class Tiller
    @receipts << receipt
   end 
 
+  def clear_receipts
+    @receipts.clear
+  end
+
 
 end 

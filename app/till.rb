@@ -13,11 +13,15 @@ require './app/helpers/helper'
 
 class Till < Sinatra::Base
 
-  TILLER = Tiller.new
+ 
 
   get '/' do
+    @tiller = Tiller.new
+    @menu = Menu.new
+    johns_order
     janes_order
-    TILLER.add_receipt(@janes_receipt)
+    @tiller.add_receipt(@janes_receipt)
+    @tiller.add_receipt(@johns_receipt)
     
     erb :index 
   end
