@@ -9,4 +9,12 @@ class Receipt
     @created_at = Time.now
   end 
 
+  def total 
+    @calculator.total
+  end 
+
+  def items
+    @order.items
+  end 
+
 end 

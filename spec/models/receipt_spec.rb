@@ -2,10 +2,16 @@ require 'spec_helper'
 
 describe 'Receipt' do 
  
-  let(:order) {double :order, customer: "Sandi", :items => ["americano"=>3]}
-  let(:calculator) {double :calculator, :total=> 16.72, :tax=>1.32, :total_before_tax=>15.4}
+  let(:order) {double :order, customer: "Sandi", :items => {"americano"=>3}}
+  let(:calculator) {double :calculator, :total=> 16.72}
 
-  let(:receipt) {Receipt.new({:orders=>[order], :totals=>calculator})}
+  let(:receipt) {Receipt.new({:orders=>[order], :calculator=>calculator})}
+
+  #  before(:each) do 
+  #   allow(order).to receive(:items).and_return({"americano"=>3})
+  # end
+
+
 
   it 'is created at a certain time' do
     new_time = Time.local(2015, 9, 1, 12, 0, 0)
