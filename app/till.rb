@@ -16,11 +16,13 @@ class Till < Sinatra::Base
   TILLER = Tiller.new
 
   get '/' do
-    @menu = Menu.new
-    johns_order
-    janes_order
-    TILLER.add_receipt(@janes_receipt)
-    TILLER.add_receipt(@johns_receipt)
+   
+    
+    erb :index 
+  end
+
+  post '/receipt' do
+   
     
     erb :index 
   end

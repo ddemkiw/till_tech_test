@@ -12,8 +12,11 @@
           <table style="width:100%">
           <%@menu.items.each do |item, price|%>
             <tr>
-              <td><button class="link"><%="#{item}"%></button></td>
-              <td><%=price%></td> 
+              <td><%="#{item}"%></td>
+              <td><%=price%></td>
+              <td><form action="/receipt"> x
+                    <input type="number" value=<%="#{item.tr(" ", "_")}"%> name="quantity" min="1" max="100">
+                  </form></td>
             </tr>
           <%end%>
           </table><br>
